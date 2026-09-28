@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Missing File</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <div id="game">
+    <div id="desktop" class="screen">
+        <header class="topbar">
+        <div class="title-box">
+            <h2>FILE DELETION TRACE</h2>
+        </div>
+        </header>
+
+    <main class="desktop-area">
+     <div class="brief-panel">
+      <div class="brief-label">MESSAGE</div>
+      <div class="dialog-meta">UNKNOWN</div>
+      <div class="dialog-line">“Are you on the company network? Good. Listen carefully.”</div>
+      <div class="dialog-line">“A confidential file was deleted. It contains a witness statement that could expose a criminal network.”</div>
+      <div class="dialog-line threat-line">“Find who deleted it before midnight. If you fail, the witness dies.”</div>
+      <div class="dialog-line final-line">“Check the logs, the messages, and the deleted file. Trust the evidence. Find the real culprit.”</div>
+      <div class="window-stack">
+            <div id="accessLog" class="system-window" style="display: none;">
+              <div class="window-header">
+                <span>ACCESS LOG</span>
+                <button id="closeAccessLog" class="close-button">X</button>
+              </div>
+              <div class="window-body">
+                <p>//USER X LOGIN</p>
+                <p>//report_final.txt DELETE EVENT</p>
+                <p>//USER X LOGOUT</p>
+                <div class="important-note">
+                  ALERT:<br />
+                  FILE DELETION OCCURRED.
+                </div>
+              </div>
+            </div>
+
+            <div id="messages" class="system-window" style="display: none;">
+              <div class="window-header">
+                <span>INTERNAL CHAT</span>
+                <button id="closeMessages" class="close-button">X</button>
+              </div>
+              <div class="window-body chat-box">
+                <p><strong>Emma:</strong> “Okay… it was me. I deleted it.”</p>
+                <p><strong>Ryan:</strong> “No, Emma didn’t delete the file.”</p>
+                <p><strong>Sophie:</strong> “I’m pretty sure Ryan did it.”</p>
+                <p><strong>Jason:</strong> “It definitely wasn’t Sophie.”</p>
+                <div class="attachment-box" id="securityGameTrigger" role="button" tabindex="0">
+                  ATTACHMENT: security_verification.exe
+                </div>
+              </div>
+            </div>
+
+            <div id="deletedFiles" class="system-window" style="display: none;">
+              <div class="window-header">
+                <span>RECOVERY NODE</span>
+                <button id="closeDeletedFiles" class="close-button">X</button>
+              </div>
+              <div class="window-body">
+                <p class="small-text">RECOVERY KEY REQUIRED.</p>
+
+                <label for="recoveryInput" class="label-text">ENTER 4-DIGIT RECOVERY KEY</label>
+                <input id="recoveryInput" type="password" maxlength="4" />
+                <button id="recoverButton" class="small-button">RECOVER</button>
+
+                <div id="recoveryResult" class="recovery-result"></div>
+                <p id="hint" class="small-text" style="display: none;">Only one of these four statements is true.</p>
+              </div>
+            </div>
+
+            <div id="securityVerification" class="system-window security-window" style="display: none;">
+              <div class="window-header">
+                <span>SECURITY VERIFICATION</span>
+                <button id="closeSecurityVerification" class="close-button">X</button>
+              </div>
+              <div class="window-body security-body">
+                <p>Complete the security check to recover the deleted file.</p>
+                <p id="intro">Click the green box.</p>
+                <div id="verificationBoard" class="verification-board">
+                  <button id="box1" class="verification-box" aria-label="Box 1"></button>
+                  <button id="box2" class="verification-box" aria-label="Box 2"></button>
+                  <button id="box3" class="verification-box" aria-label="Box 3"></button>
+                  <button id="box4" class="verification-box" aria-label="Box 4"></button>
+                </div>
+                <p id="recoveryKeyLine" class="recovery-key-line">Recovery Key: <span id="code1"></span></p>
+                <p id="gameFeedback" class="game-feedback" aria-live="polite"></p>
+                <div id="verificationComplete" class="verification-complete" style="display: none;"> </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="desktop-icons">
+            <button id="accessLogIcon" class="desktop-icon">ACCESS LOG</button>
+            <button id="messagesIcon" class="desktop-icon">MESSAGES</button>
+            <button id="deletedFilesIcon" class="desktop-icon">DELETED FILES</button>
+          </div>
+        </main>
+
+        <section class="case-actions">
+          <button id="suspect" class="main-button" style="display: none;">
+            I HAVE RECOVERED THE FILE AND KNOW WHO DID IT
+          </button>
+          <div id="choice" class="suspect-choices" style="display: none;">
+            <button id="chooseEmma" class="suspect-button">Emma</button>
+            <button id="chooseRyan" class="suspect-button">Ryan</button>
+            <button id="chooseSophie" class="suspect-button">Sophie</button>
+            <button id="chooseJason" class="suspect-button">Jason</button>
+          </div>
+          <p id="result" class="suspect-result" aria-live="polite"></p>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
